@@ -111,7 +111,7 @@ export default function Navbar() {
       >
         <div className="flex justify-between items-center px-6 py-4 border-b border-teal-600">
           <Image
-            src="http://localhost/wordpress/wp-content/uploads/2023/12/header-logo.png"
+            src="/images/header-logo.png"
             alt="Site Logo"
             width={120}
             height={40}
