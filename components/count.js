@@ -8,30 +8,30 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger);
 
-export default function StatsSection() {
+export default function StatsSection({pageData}) {
   const countRefs = useRef([]);
   const [startCount, setStartCount] = useState(Array(4).fill(false)); // to track which counts have started
 
   const stats = [
     {
-      icon: "/images/Psycologist-icon.png",
+      icon: pageData?.sections[5]?.images[0],
       number: 2850,
-      label: "Psychologists",
+      label: pageData?.sections[5]?.text[0],
     },
     {
-      icon: "/images/Branches-icon.png",
+      icon: pageData?.sections[5]?.images[1],
       number: 1245,
-      label: "Branches",
+      label: pageData?.sections[5]?.text[1],
     },
     {
-      icon: "/images/Patients-icon.png",
+      icon: pageData?.sections[5]?.images[2],
       number: 3358,
-      label: "Patients",
+      label: pageData?.sections[5]?.text[2],
     },
     {
-      icon: "/images/Achievements-icon.png",
+      icon: pageData?.sections[5]?.images[3],
       number: 2496,
-      label: "Achievements",
+      label: pageData?.sections[5]?.text[3],
     },
   ];
 
@@ -72,9 +72,9 @@ export default function StatsSection() {
           {stats.map((item, index) => (
             <div key={index} className="flex flex-col items-center">
               <div className="bg-[#ee8961] rounded-full p-6 w-24 h-24 flex items-center justify-center mb-4 transform transition duration-300 hover:-translate-y-1">
-                <Image
+                <img
                   src={item.icon}
-                  alt={item.label}
+                  alt={item.label }
                   width={50}
                   height={50}
                   className="object-contain"

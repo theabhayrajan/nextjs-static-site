@@ -42,7 +42,7 @@ const cards = [
   },
 ];
 
-export default function CaseStudie() {
+export default function CaseStudie({pageData}) {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [cardsPerSlide, setCardsPerSlide] = useState(3);
 
@@ -67,9 +67,9 @@ export default function CaseStudie() {
 
   return (
     <div className="bg-[#fdf8f3] min-h-screen py-16 px-6 text-center">
-      <p className="text-orange-500 text-sm mb-2">Latest Projects</p>
+      <p className="text-orange-500 text-sm mb-2">{pageData?.sections[4]?.text[0]}</p>
       <h1 className="text-4xl font-semibold text-gray-800 mb-10">
-        Explore Our Latest Case Studies
+        {pageData?.sections[4]?.text[1]}
       </h1>
 
       {/* Carousel */}

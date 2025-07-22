@@ -27,7 +27,7 @@ const teamMembers = [
   },
 ];
 
-const TeamMember = () => {
+const TeamMember = ({pageData}) => {
   const cardRefs = useRef([]);
 
   useEffect(() => {
@@ -50,9 +50,9 @@ const TeamMember = () => {
     <section className="w-full bg-[#fdf8f3] py-16 px-4">
       {/* Header Text */}
       <div className="text-center mb-12">
-        <p className="text-lg font-semibold text-[#ee8961]">Team Members</p>
+        <p className="text-lg font-semibold text-[#ee8961]">{pageData?.sections[7]?.text[0]}</p>
         <h2 className="text-3xl sm:text-4xl font-semibold text-[#232323]">
-          Our Professional Team
+          {pageData?.sections[7]?.text[1]}
         </h2>
       </div>
 

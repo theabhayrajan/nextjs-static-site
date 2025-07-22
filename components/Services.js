@@ -43,7 +43,7 @@ const services = [
   },
 ];
 
-export default function CarouselPage() {
+export default function CarouselPage({pageData}) {
   const [index, setIndex] = useState(0);
   const textRef = useRef(null);
 
@@ -75,10 +75,10 @@ export default function CarouselPage() {
         {/* Heading Text Animation */}
         <div ref={textRef}>
           <p className="text-base font-semibold text-[#e78e67] mb-2 mt-10 pt-4">
-            Services We Provide
+           {pageData?.sections[1]?.text[0]}
           </p>
           <h2 className="text-lg lg:text-4xl font-semi font-medium leading-tight text-[#232323] mb-12">
-            Professional Psychology Therapy Services <br /> You Can Choose
+            {pageData?.sections[1]?.text[1]}
           </h2>
         </div>
 

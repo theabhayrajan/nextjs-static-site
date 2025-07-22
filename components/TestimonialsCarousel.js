@@ -6,7 +6,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger);
 
-const TestimonialsCarousel = () => {
+const TestimonialsCarousel = ({pageData}) => {
   const testimonials = [
     {
       name: "Jonathan Andrew",
@@ -84,10 +84,10 @@ const TestimonialsCarousel = () => {
       {/* ✅ Heading with GSAP animation */}
       <div ref={headingRef} className="text-center mb-10 space-y-2">
         <h3 className="text-sm font-bold text-orange-500 uppercase tracking-widest">
-          Testimonial
+         {pageData?.sections[8]?.text[0]}
         </h3>
         <h2 className="text-3xl md:text-4xl font-bold text-gray-800">
-          What Our Patients are Saying
+        {pageData?.sections[8]?.text[1]}
         </h2>
       </div>
 

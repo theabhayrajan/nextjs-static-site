@@ -42,7 +42,7 @@ const cards = [
   },
 ];
 
-export default function NewsBlog() {
+export default function NewsBlog({pageData}) {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [cardsPerSlide, setCardsPerSlide] = useState(3);
 
@@ -68,8 +68,8 @@ export default function NewsBlog() {
 
   return (
     <div className="bg-[#fdf8f3] min-h-screen py-16 px-6 text-center">
-      <p className="text-orange-500 text-md mb-2 font- Sans-serif">Articles & Tips</p>
-      <h1 className="text-4xl font- Sans-serif text-gray-800 mb-10">Latest News & Blogs</h1>
+      <p className="text-orange-500 text-md mb-2 font- Sans-serif">{pageData?.sections[9]?.text[0]}</p>
+      <h1 className="text-4xl font- Sans-serif text-gray-800 mb-10">{pageData?.sections[9]?.text[1]}</h1>
 
       {/* Carousel Container */}
       <div className="overflow-hidden max-w-7xl mx-auto">

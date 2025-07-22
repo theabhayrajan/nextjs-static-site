@@ -3,16 +3,16 @@
 import { FaUser, FaEnvelope, FaPhone } from "react-icons/fa";
 import { BsChevronDown } from "react-icons/bs";
 
-export default function AppointmentSection() {
+export default function AppointmentSection({pageData}) {
   return (
     <div className="w-full bg-[#ee8961] py-16 px-4 relative overflow-hidden">
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center relative z-10">
         
         {/* LEFT: FORM */}
         <div className="text-white relative">
-          <h4 className="text-lg font-semibold mb-2">Book With Us Now</h4>
-          <h2 className="text-3xl md:text-4xl font-bold mb-2">Get an Appointment</h2>
-          <p className="text-sm mb-6">Molestiae non recusandae itaque earum rerum sarien.</p>
+          <h4 className="text-lg font-semibold mb-2"> {pageData?.sections[3]?.text[0]}</h4>
+          <h2 className="text-3xl md:text-4xl font-bold mb-2">{pageData?.sections[3]?.text[1]}</h2>
+          <p className="text-sm mb-6">{pageData?.sections[3]?.text[2]}</p>
 
           <form className="space-y-4">
             {/* Name & Email */}
@@ -85,7 +85,7 @@ export default function AppointmentSection() {
         {/* RIGHT: IMAGE */}
         <div className="hidden md:flex justify-center relative">
           <img
-            src="/images/Book-with-us-bg-img.jpg"
+            src= {pageData?.sections[3]?.images[0]}
             alt="Appointment"
             className="w-full max-w-2xl h-auto rounded-lg shadow-lg object-cover"
           />
